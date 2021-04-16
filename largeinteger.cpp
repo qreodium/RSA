@@ -5,7 +5,7 @@
 #include <string>
 #include <sstream>
 #include <cmath>
-#include "LargeInteger.h"
+#include "largeinteger.h"
 #define MAX 10000 // for strings
 
 LargeInteger::LargeInteger() // empty constructor initializes zero

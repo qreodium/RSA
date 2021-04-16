@@ -2,7 +2,7 @@
 #define RSA_H
 
 #include <string>
-#include <LargeInteger.h>
+#include <largeinteger.h>
 
 class RSA
 {
@@ -18,6 +18,7 @@ public:
 
     RSA();
 private:
+    LargeInteger modexp(LargeInteger x, LargeInteger y, LargeInteger N);
     LargeInteger encChar(char c, LargeInteger publicKey, LargeInteger N);
     LargeInteger decChar(LargeInteger character, int flag);
     void generateP(), generateQ(),

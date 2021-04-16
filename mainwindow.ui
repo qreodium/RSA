@@ -23,14 +23,18 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>RSA thing</string>
+   <string>RSA messenger</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../../Галерея/Не сортированные/Ава/1_24.jpg</normaloff>../../../../../Галерея/Не сортированные/Ава/1_24.jpg</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_5">
     <item>
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="title">

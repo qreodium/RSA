@@ -1,4 +1,4 @@
-#include "RSA.h"
+#include "rsa.h"
 #include <QDebug>
 #include <ctime>
 #include <QCoreApplication>
@@ -62,6 +62,16 @@ string RSA::decode(string toDecode, int flag)
     return decoded;
 }
 
+LargeInteger RSA::modexp(LargeInteger x, LargeInteger y, LargeInteger N)// x^y % N
+{
+  if (y == 0) return 1;
+  LargeInteger z = modexp(x, y / 2, N);
+  if (y % 2 == 0)
+    return (z*z) % N;
+  else
+    return (x*z*z) % N;
+}
+
 LargeInteger RSA::decChar(LargeInteger character, int flag)
 {
     LargeInteger current(character);
@@ -78,34 +88,18 @@ LargeInteger RSA::decChar(LargeInteger character, int flag)
         N = N_Bob;
         privateKey = e_Bob;
     }
-           while(atoi(privateKey.getNumber().c_str())) {
-                if (privateKey % 2 == 0) {
-                   privateKey /= 2;
-                   current *= current;
-                 }
-                 else {
-                    privateKey--;
-                    result *= current;
-                 }
-                }
 
-
-    LargeInteger ost = (result % N) + 64;
+    LargeInteger ost = modexp(current,privateKey,N);
 
     return ost;
 }
 
 LargeInteger RSA::encChar(char c, LargeInteger publicKey, LargeInteger N)
 {
-    LargeInteger charPos = LargeInteger((c - 64));
+    LargeInteger charPos = LargeInteger((c));
     LargeInteger current = LargeInteger(charPos.getNumber());
 
-    for (LargeInteger i = LargeInteger(1); i < publicKey; i++)
-    {
-        current *= charPos;
-    }
-
-    LargeInteger ost = current % N;
+    LargeInteger ost = modexp(current,publicKey,N);
     return ost;
 }
 
