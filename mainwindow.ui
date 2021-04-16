@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>415</width>
+    <height>291</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>415</width>
+    <height>291</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>415</width>
+    <height>291</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>RSA thing</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_5">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Alice</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout">
+        <item row="0" column="0">
+         <widget class="QPlainTextEdit" name="Alice_TE"/>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QPushButton" name="Send_Al_button">
+            <property name="text">
+             <string>Send</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Encrypt_Al_button">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Decode_Al_button">
+            <property name="text">
+             <string>Decode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QLabel" name="Q_Al_label">
+            <property name="text">
+             <string>Q:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="N_Al_label">
+            <property name="text">
+             <string>N:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="P_Al_label">
+            <property name="text">
+             <string>P:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Private_Al_label">
+            <property name="cursor">
+             <cursorShape>ArrowCursor</cursorShape>
+            </property>
+            <property name="text">
+             <string>Private key:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Public_Al_label">
+            <property name="text">
+             <string>Public key:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Bob</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayout_3">
+        <item row="0" column="0">
+         <widget class="QPlainTextEdit" name="Bob_TE"/>
+        </item>
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QPushButton" name="Send_Bob_button">
+            <property name="text">
+             <string>Send</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Encrypt_Bob_button">
+            <property name="text">
+             <string>Encrypt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="Decode_Bob_button">
+            <property name="text">
+             <string>Decode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QLabel" name="Q_Bob_label">
+            <property name="text">
+             <string>Q:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="N_Bob_label">
+            <property name="text">
+             <string>N:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="P_Bob_label">
+            <property name="text">
+             <string>P:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Private_Bob_label">
+            <property name="text">
+             <string>Private key:</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="Public_Bob_label">
+            <property name="text">
+             <string>Public key:</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>Send_Al_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sendFromAlice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Encrypt_Al_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>encryptAlice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Send_Bob_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>sendFromBob()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>557</x>
+     <y>102</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Encrypt_Bob_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>encryptBob()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>557</x>
+     <y>132</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Decode_Al_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>decodeAlice()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>227</x>
+     <y>162</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>Decode_Bob_button</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>decodeBob()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>557</x>
+     <y>162</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>307</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>generateKeys()</slot>
+  <slot>clearForms()</slot>
+  <slot>sendFromAlice()</slot>
+  <slot>sendFromBob()</slot>
+  <slot>encryptAlice()</slot>
+  <slot>encryptBob()</slot>
+  <slot>decodeAlice()</slot>
+  <slot>decodeBob()</slot>
+ </slots>
+</ui>
