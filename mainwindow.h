@@ -2,8 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <RSA.h>
-#include <LargeInteger.h>
+#include <rsa.h>
+#include <largeinteger.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -32,7 +32,7 @@ private:
     void setLabels();
     LargeInteger P_Al, Q_Al, N_Al, d_Al, s_Al, e_Al;
     LargeInteger P_Bob, Q_Bob, N_Bob, d_Bob, s_Bob, e_Bob;
-    RSA RSA;
+    RSA_H::RSA RSA;
     void manageWidgets(bool);
     Ui::MainWindow *ui;
 };
